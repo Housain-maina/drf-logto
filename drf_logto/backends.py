@@ -21,7 +21,7 @@ try:
             max_cached_keys: int = 16,
             cache_jwk_set: bool = True,
             lifespan: int = 300,
-            headers: Optional[Dict[str, Any] | None] = None,
+            headers: Optional[Union[Dict[str, Any], None]] = None,
             timeout: int = 30,
             ssl_context: Optional[SSLContext] = None,
         ):
