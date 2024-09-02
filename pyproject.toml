@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "drf-logto"
+version = "0.1.0"
+description = "Logto authentication integration for Django Rest Framework."
+authors = ["Hussaini Usman <hussainmaina27@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/housain-maina/drf-logto"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = ">=3.2"
+djangorestframework = ">=3.2"
+djangorestframework-simplejwt = ">=4.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.2"
+pytest = "^8.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
