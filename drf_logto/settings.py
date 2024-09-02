@@ -15,7 +15,6 @@ DEFAULTS = {
 
 class LogtoAPISettings(_APISettings):  # pragma: no cover
     def __check_user_settings(self, user_settings: Dict[str, Any]) -> Dict[str, Any]:
-        print("checking")
 
         if user_settings.LOGTO_SIGNUP_IDENTIFIER not in ["username", "email", "phone"]:
             raise RuntimeError(
