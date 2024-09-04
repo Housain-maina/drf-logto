@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
       - main
-  release:
-    types: [created]
 
 jobs:
   lint:
@@ -50,7 +48,6 @@ jobs:
 
   publish-to-pypi:
     name: Publish Python 🐍 distribution 📦 to PyPI
-    if: startsWith(github.ref, 'refs/tags/')
     needs: [lint, build]
     runs-on: ubuntu-latest
     environment:
