@@ -12,7 +12,6 @@ dependencies = [
 ]
 description = "Logto authentication integration for Django Rest Framework."
 readme = "README.md"
-license = "LICENSE"
 requires-python = ">= 3.8"
 authors = [
     {name = "Hussaini Usman", email = "hussainmaina27@gmail.com"},
@@ -21,6 +20,7 @@ classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",
     "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
