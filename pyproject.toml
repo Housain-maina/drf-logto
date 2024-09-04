@@ -1,22 +1,38 @@
-[tool.poetry]
-name = "drf-logto"
-version = "0.1.0"
-description = "Logto authentication integration for Django Rest Framework."
-authors = ["Hussaini Usman <hussainmaina27@gmail.com>"]
-license = "MIT"
-readme = "README.md"
-homepage = "https://github.com/housain-maina/drf-logto"
-
-[tool.poetry.dependencies]
-python = "^3.9"
-django = ">=3.2"
-djangorestframework = ">=3.2"
-djangorestframework-simplejwt = ">=4.1"
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.6.2"
-pytest = "^8.3.2"
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drf-logto"
+version = "0.1.1-alpha"
+dependencies = [
+    "django>=3.2",
+    "djangorestframework>=3.13.0",
+    "djangorestframework-simplejwt[crypto]>=4.6.0",
+]
+description = "Logto authentication integration for Django Rest Framework."
+readme = "README.md"
+license = "LICENSE"
+requires-python = ">= 3.8"
+authors = [
+    {name = "Hussaini Usman", email = "hussainmaina27@gmail.com"},
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+[project.urls]
+Homepage = "https://github.com/Housain-maina/drf-logto"
