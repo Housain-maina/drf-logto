@@ -50,9 +50,6 @@ jobs:
     name: Publish Python 🐍 distribution 📦 to PyPI
     needs: [lint, build]
     runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/drf-logto
     permissions:
       id-token: write
     steps:
@@ -63,6 +60,9 @@ jobs:
           path: dist/
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          username: "__token__"
+          password: ${{ secrets.PYPI_TOKEN }}
 
   github-release:
     name: Sign the Python 🐍 distribution 📦 with Sigstore and upload them to GitHub Release
