@@ -1,12 +1,8 @@
 name: Lint, Build and Publish Python 🐍 distribution 📦 to PyPI
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  release:
+    types: [created]
 
 jobs:
   lint:
@@ -61,7 +57,6 @@ jobs:
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          username: "__token__"
           password: ${{ secrets.PYPI_TOKEN }}
 
   github-release:
