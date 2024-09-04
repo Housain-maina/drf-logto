@@ -1,8 +1,9 @@
 name: Lint, Build and Publish Python 🐍 distribution 📦 to PyPI
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   lint:
