@@ -1,3 +1,6 @@
+[![codecov](https://codecov.io/gh/Housain-maina/drf-logto/graph/badge.svg?token=fnqC4zcMto)](https://codecov.io/gh/Housain-maina/drf-logto)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+
 # Drf-Logto
 
 Logto authentication integration for Django Rest Framework.
