@@ -1,0 +1,6 @@
+djangorestframework>=3.13.0
+djangorestframework-simplejwt[crypto]>=4.6.0
+coverage==7.6.1
+pytest==8.3.3
+pytest-django==4.9.0
+tox==4.19.0

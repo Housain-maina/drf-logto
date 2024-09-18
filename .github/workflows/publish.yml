@@ -1,4 +1,4 @@
-name: Lint, Build and Publish Python 🐍 distribution 📦 to PyPI
+name: Build and Publish Python 🐍 distribution 📦 to PyPI
 
 on:
   push:
@@ -6,27 +6,10 @@ on:
       - "v*.*.*"
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    name: Lint
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.8
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install ruff
-      - name: Lint
-        run: python3 -m ruff format drf_logto/
 
   build:
     runs-on: ubuntu-latest
     name: Build distribution 📦
-    needs: [lint]
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -45,7 +28,7 @@ jobs:
 
   publish-to-pypi:
     name: Publish Python 🐍 distribution 📦 to PyPI
-    needs: [lint, build]
+    needs: [build]
     runs-on: ubuntu-latest
     permissions:
       id-token: write

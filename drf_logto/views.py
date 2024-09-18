@@ -3,7 +3,7 @@ from secrets import compare_digest
 from django.db.transaction import atomic
 from django.http import HttpResponse, HttpResponseForbidden
 from django.contrib.auth import get_user_model
-from drf_logto.settings import logto_api_settings
+from drf_logto.app_settings import logto_api_settings
 from rest_framework.views import APIView
 
 

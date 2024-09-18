@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from drf_logto.settings import logto_api_settings
+from drf_logto.app_settings import logto_api_settings
 
 
 User = get_user_model()

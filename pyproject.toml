@@ -4,21 +4,26 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "drf-logto"
+description = "Logto authentication integration for Django Rest Framework."
 version = "0.1.2-alpha"
+readme = "README.md"
+authors = [
+    {name = "Hussaini Usman", email = "hussainmaina27@gmail.com"},
+]
+requires-python = ">=3.8"
 dependencies = [
     "django>=3.2",
     "djangorestframework>=3.13.0",
     "djangorestframework-simplejwt[crypto]>=4.6.0",
 ]
-description = "Logto authentication integration for Django Rest Framework."
-readme = "README.md"
-requires-python = ">= 3.8"
-authors = [
-    {name = "Hussaini Usman", email = "hussainmaina27@gmail.com"},
-]
 classifiers = [
     "Environment :: Web Environment",
     "Framework :: Django",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
@@ -28,7 +33,6 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
     "Topic :: Internet :: WWW/HTTP",
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
 ]

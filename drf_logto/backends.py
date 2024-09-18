@@ -1,6 +1,5 @@
 import json
 from datetime import timedelta
-from ssl import SSLContext
 
 from rest_framework_simplejwt.backends import TokenBackend as _TokenBackend
 from rest_framework_simplejwt.settings import api_settings
@@ -11,32 +10,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 try:
-    from jwt import PyJWKClient as _PyJWKClient, PyJWKClientError
-
-    class PyJWKClient(_PyJWKClient):
-        def __init__(
-            self,
-            uri: str,
-            cache_keys: bool = False,
-            max_cached_keys: int = 16,
-            cache_jwk_set: bool = True,
-            lifespan: int = 300,
-            headers: Optional[Union[Dict[str, Any], None]] = None,
-            timeout: int = 30,
-            ssl_context: Optional[SSLContext] = None,
-        ):
-            if headers is None:
-                headers = {"User-Agent": "DjangoRestFramework"}
-            super().__init__(
-                uri,
-                cache_keys,
-                max_cached_keys,
-                cache_jwk_set,
-                lifespan,
-                headers,
-                timeout,
-                ssl_context,
-            )
+    from jwt import PyJWKClient, PyJWKClientError
 
     JWK_CLIENT_AVAILABLE = True
 except ImportError:
@@ -67,7 +41,7 @@ class TokenBackend(_TokenBackend):
         )
 
         if JWK_CLIENT_AVAILABLE:
-            self.jwks_client = PyJWKClient(jwk_url) if jwk_url else None
+            self.jwks_client = PyJWKClient(jwk_url, headers={"User-Agent": "DjangoRestFramework"}) if jwk_url else None
         else:
             self.jwks_client = None
 
